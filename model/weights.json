@@ -1,0 +1,36 @@
+{
+  "version": "v1.0-trained",
+  "trained_at": "2026-06-21T07:53:16.732Z",
+  "algorithm": "OLS_normal_equation",
+  "training_records": 5000,
+  "metrics": {
+    "rmse": 1.6,
+    "grade_acc_pct": 96,
+    "safe_f1": 1,
+    "caution_f1": 0.905,
+    "warning_f1": 0.851,
+    "critical_f1": 0.918
+  },
+  "features": [
+    "total_violations",
+    "recent_violations",
+    "max_penalty_grade",
+    "days_since_last_violation_inv",
+    "is_closed"
+  ],
+  "weights": [
+    6.560249,
+    12.226696,
+    19.766246,
+    0.079444,
+    10.023322
+  ],
+  "bias": 0.477941,
+  "scale": 100,
+  "thresholds": {
+    "safe": 7,
+    "caution": 20,
+    "warning": 60
+  },
+  "notes": "score = clamp(bias + sum(w_i * x_i), 0, 100) | days_since_last_violation_inv = daysSince>=9999 ? 0 : (1/(daysSince+1))*365 | thresholds auto-calibrated to data percentiles (65/85/96th)"
+}

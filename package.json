@@ -1,0 +1,20 @@
+{
+  "name": "hygiene-ai-backend",
+  "version": "1.0.0",
+  "description": "식품의약품안전처 음식점 위생 AI 안전점수 서비스 백엔드",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "preprocess": "node preprocess.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "iconv-lite": "^0.6.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "license": "MIT"
+}
